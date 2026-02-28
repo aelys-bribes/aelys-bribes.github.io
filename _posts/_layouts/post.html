@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }} – {{ site.title }}</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Crimson+Pro:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --accent: #d04a02;
+  --bg: #f6f3ee;
+  --text: #1a1a1a;
+  --muted: #7a7a7a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', serif;
+  margin: 0;
+  line-height: 1.95;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 120px auto;
+  padding: 20px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.author {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  margin-bottom: 50px;
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.book-cover {
+  width: 100%;
+  border: 1px solid var(--accent);
+  padding: 6px;
+  background: white;
+}
+
+blockquote {
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  border-left: 3px solid var(--accent);
+}
+
+p {
+  margin-bottom: 25px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.reference {
+  margin-top: 80px;
+  font-size: 14px;
+  color: var(--muted);
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="meta">
+{{ page.date | date: "%B %Y" }} — {{ page.genre }}
+</div>
+
+<h1>{{ page.title }}</h1>
+
+<div class="author">{{ page.author }}</div>
+
+<div class="article-layout">
+
+{% if page.image %}
+<img src="{{ page.image }}" class="book-cover">
+{% endif %}
+
+<div>
+{{ content }}
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
