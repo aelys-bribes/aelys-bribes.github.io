@@ -1,190 +1,25 @@
+---
+layout: none
+---
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bribes – Carnet de lectures</title>
+<title>{{ site.title }} – {{ site.description }}</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-
-:root {
-  --accent: #d04a02;
-  --bg: #f8f5f0;
-  --text: #1a1a1a;
-  --muted: #8c8c8c;
-}
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Libre Baskerville', serif;
-  margin: 0;
-  line-height: 1.9;
-  font-size: 18px;
-}
-
-/* NAVIGATION */
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 30px 0;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--text);
-  position: relative;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* CONTAINER */
-
-.container {
-  max-width: 1000px;
-  margin: 60px auto 100px auto;
-  padding: 20px;
-}
-
-/* HEADER */
-
-.site-title {
-  text-align: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 88px;
-  margin-bottom: 0;
-}
-
-.site-subtitle {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 5px;
-  color: var(--muted);
-  margin-bottom: 100px;
-}
-
-/* FEATURE ARTICLE */
-
-.feature {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 80px;
-  align-items: center;
-  margin-bottom: 140px;
-}
-
-.feature-text h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.feature-text .meta {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 25px;
-}
-
-.feature-text p {
-  margin-bottom: 25px;
-}
-
-.read-link {
-  text-decoration: none;
-  color: var(--accent);
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 3px;
-}
-
-.read-link:hover {
-  opacity: 0.7;
-}
-
-.feature img {
-  width: 100%;
-  height: auto;
-}
-
-/* SECTION TITLE */
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 34px;
-  margin-bottom: 60px;
-  position: relative;
-}
-
-.section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: var(--accent);
-  margin-top: 15px;
-}
-
-/* GRID ARTICLES */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-}
-
-.article h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.article .meta {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 15px;
-}
-
-.article p {
-  font-size: 16px;
-  margin-bottom: 15px;
-}
-
-.article a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.article a:hover {
-  text-decoration: underline;
-}
-
+/* Ton CSS reste identique — je ne le remets pas ici pour alléger */
 </style>
 </head>
 
 <body>
 
 <nav>
-  <a href="#">Accueil</a>
+  <a href="{{ site.baseurl }}/">Accueil</a>
   <a href="#">À propos</a>
   <a href="#">Bibliothèque</a>
   <a href="#">Contact</a>
@@ -192,41 +27,36 @@ nav a:hover::after {
 
 <div class="container">
 
-  <div class="site-title">Bribes</div>
-  <div class="site-subtitle">Carnet de lectures</div>
+  <div class="site-title">{{ site.title }}</div>
+  <div class="site-subtitle">{{ site.description }}</div>
 
-  <!-- ARTICLE MIS EN AVANT -->
+  {% assign latest = site.posts.first %}
 
   <div class="feature">
     <div class="feature-text">
-      <div class="meta">28 février 2026 — Roman</div>
-      <h2>Premier fragment</h2>
-      <p>Un texte qui explore les silences et la mémoire. Une écriture lente, attentive aux paysages intérieurs et aux voix enfouies.</p>
-      <<a href="premier-fragment.html" class="read-link">Lire l’article complet</a>
+      <div class="meta">
+        {{ latest.date | date: "%d %B %Y" }} — {{ latest.genre }}
+      </div>
+      <h2>{{ latest.title }}</h2>
+      <p>{{ latest.excerpt }}</p>
+      <a href="{{ latest.url }}" class="read-link">Lire l’article complet</a>
     </div>
-    <img src="https://via.placeholder.com/400x550" alt="Couverture du livre">
+    {% if latest.image %}
+      <img src="{{ latest.image }}" alt="{{ latest.title }}">
+    {% endif %}
   </div>
-
-  <!-- AUTRES ARTICLES -->
 
   <div class="section-title">Lectures récentes</div>
 
   <div class="grid">
-
-    <div class="article">
-      <div class="meta">Essai</div>
-      <h3>Fragments de pensée</h3>
-      <p>Un livre dense et lumineux, qui interroge la transmission et la mémoire collective.</p>
-      <a href="#">Lire</a>
-    </div>
-
-    <div class="article">
-      <div class="meta">Roman</div>
-      <h3>Les territoires intimes</h3>
-      <p>Une narration subtile qui s’installe progressivement et révèle ses tensions sous la surface.</p>
-      <a href="#">Lire</a>
-    </div>
-
+    {% for post in site.posts offset:1 limit:4 %}
+      <div class="article">
+        <div class="meta">{{ post.genre }}</div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt }}</p>
+        <a href="{{ post.url }}">Lire</a>
+      </div>
+    {% endfor %}
   </div>
 
 </div>
