@@ -1,29 +1,196 @@
-<div class="meta">Mars 2026 — Fable philosophique</div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L’homme qui n’aimait plus les chats – Bribes</title>
 
-<h1>L’homme qui n’aimait plus les chats</h1>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
-<p class="author">Isabelle Aupy</p>
+<style>
 
-<div class="article-layout">
+:root {
+  --accent: #d04a02;
+  --bg: #f8f5f0;
+  --text: #1a1a1a;
+  --muted: #8c8c8c;
+}
 
-  <img src="aupy-chats.jpg" alt="L’homme qui n’aimait plus les chats" class="book-cover">
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Libre Baskerville', serif;
+  margin: 0;
+  line-height: 1.9;
+  font-size: 18px;
+}
 
-  <div class="article-text">
+/* Navigation */
 
-    <blockquote class="opening">
-    Les esprits s'embrouillent facilement. C'est ce qui arrive quand on appelle un chien un chat. On embrouille tout, on change les idées des gens, on les empêche de savoir ce qu'ils aiment ou ce qu'ils pensent.
-    </blockquote>
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
-    <p>Une île. Sur laquelle vivent en bonne intelligence quelques habitants, vaguement marginaux, et des chats, à foison, qui y errent comme bon leur semble. Un jour, à la consternation de tous, ces derniers disparaissent. Bientôt remplacés, sur décision de l’administration du continent, par des félins d’une toute autre espèce...</p>
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+}
 
-    <p>Ce bref récit d’apparence anodine se révèle une véritable fable philosophique. À la fois mise en garde contre les dérives du langage, les croyances fallacieuses et la manipulation mentale. Et derrière l’absurde et la métaphore filée, une ode à la liberté d’être, de penser, de choisir.</p>
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: 0.3s ease;
+}
 
-    <p class="closing">Percutant.</p>
+nav a:hover::after {
+  width: 100%;
+}
 
+/* Container */
+
+.container {
+  max-width: 900px;
+  margin: 80px auto 120px auto;
+  padding: 20px;
+}
+
+/* Meta + titre */
+
+.meta {
+  color: var(--muted);
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  margin-bottom: 10px;
+}
+
+.author {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  margin-bottom: 50px;
+}
+
+/* Layout article */
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.book-cover {
+  width: 100%;
+  border: 2px solid var(--accent);
+  padding: 6px;
+  background: white;
+}
+
+.article-text {
+  max-width: 620px;
+}
+
+/* Citation d’ouverture */
+
+.opening {
+  font-size: 22px;
+  font-style: italic;
+  margin-bottom: 40px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.opening::before {
+  content: "“";
+  font-size: 70px;
+  color: var(--accent);
+  position: absolute;
+  left: -30px;
+  top: -20px;
+}
+
+/* Corps */
+
+p {
+  margin-bottom: 25px;
+}
+
+.closing {
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+/* Référence */
+
+.reference {
+  margin-top: 100px;
+  font-size: 14px;
+  color: var(--muted);
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="apropos.html">À propos</a>
+  <a href="#">Bibliothèque</a>
+  <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+  <div class="meta">Mars 2026 — Fable philosophique</div>
+
+  <h1>L’homme qui n’aimait plus les chats</h1>
+
+  <div class="author">Isabelle Aupy</div>
+
+  <div class="article-layout">
+
+    <img src="aupy-chats.jpg" alt="L’homme qui n’aimait plus les chats" class="book-cover">
+
+    <div class="article-text">
+
+      <blockquote class="opening">
+      Les esprits s'embrouillent facilement. C'est ce qui arrive quand on appelle un chien un chat. On embrouille tout, on change les idées des gens, on les empêche de savoir ce qu'ils aiment ou ce qu'ils pensent.
+      </blockquote>
+
+      <p>Une île. Sur laquelle vivent en bonne intelligence quelques habitants, vaguement marginaux, et des chats, à foison, qui y errent comme bon leur semble. Un jour, à la consternation de tous, ces derniers disparaissent. Bientôt remplacés, sur décision de l’administration du continent, par des félins d’une toute autre espèce...</p>
+
+      <p>Ce bref récit d’apparence anodine se révèle une véritable fable philosophique. À la fois mise en garde contre les dérives du langage, les croyances fallacieuses et la manipulation mentale. Et derrière l’absurde et la métaphore filée, une ode à la liberté d’être, de penser, de choisir.</p>
+
+      <p class="closing">Percutant.</p>
+
+    </div>
+
+  </div>
+
+  <div class="reference">
+  Isabelle Aupy, <em>L’homme qui n’aimait plus les chats</em>, Folio, 2023.
   </div>
 
 </div>
 
-<div class="reference">
-Isabelle Aupy, <em>L’homme qui n’aimait plus les chats</em>, Folio, 2023.
-</div>
+</body>
+</html>
