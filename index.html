@@ -17,15 +17,16 @@
 }
 
 body {
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
   font-family: 'Libre Baskerville', serif;
   margin: 0;
   line-height: 1.9;
+  font-size: 18px;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 100px auto;
   padding: 20px;
 }
@@ -35,7 +36,7 @@ body {
 .site-title {
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 80px;
+  font-size: 88px;
   margin-bottom: 0;
 }
 
@@ -43,86 +44,103 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-size: 12px;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   color: var(--muted);
-  margin-bottom: 80px;
+  margin-bottom: 100px;
 }
 
-/* HERO SECTION */
+/* FEATURE ARTICLE */
 
-.hero {
+.feature {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
   align-items: center;
   margin-bottom: 140px;
 }
 
-.hero-text h2 {
+.feature-text h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 44px;
+  font-size: 48px;
   margin-bottom: 20px;
 }
 
-.hero-text p {
-  margin-bottom: 30px;
+.feature-text .meta {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 25px;
 }
 
-.hero-text a {
+.feature-text p {
+  margin-bottom: 25px;
+}
+
+.read-link {
   text-decoration: none;
-  padding: 12px 28px;
-  border: 1px solid var(--accent);
   color: var(--accent);
-  transition: 0.3s ease;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 3px;
 }
 
-.hero-text a:hover {
-  background: var(--accent);
-  color: white;
+.read-link:hover {
+  opacity: 0.7;
 }
 
-.hero img {
+.feature img {
   width: 100%;
   height: auto;
 }
 
-/* COLLECTION */
+/* SECTION TITLE */
 
 .section-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 36px;
-  margin-bottom: 50px;
+  font-size: 34px;
+  margin-bottom: 60px;
+  position: relative;
 }
 
-.books {
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin-top: 15px;
+}
+
+/* GRID ARTICLES */
+
+.grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
 }
 
-.book {
-  text-align: center;
-}
-
-.book img {
-  width: 100%;
-  margin-bottom: 15px;
-  transition: 0.3s ease;
-}
-
-.book img:hover {
-  transform: scale(1.03);
-}
-
-.book-title {
+.article h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  margin-bottom: 5px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-.book-author {
-  font-size: 14px;
+.article .meta {
+  font-size: 13px;
   color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.article p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.article a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.article a:hover {
+  text-decoration: underline;
 }
 
 </style>
@@ -135,37 +153,38 @@ body {
   <div class="site-title">Bribes</div>
   <div class="site-subtitle">Carnet de lectures</div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-text">
-      <h2>Lecture en cours</h2>
-      <p>Un roman qui explore la mémoire, les silences, et les paysages intérieurs. Un texte délicat qui s’installe lentement.</p>
-      <a href="#">Lire la bribe</a>
+  <!-- ARTICLE MIS EN AVANT -->
+
+  <div class="feature">
+    <div class="feature-text">
+      <div class="meta">28 février 2026 — Roman</div>
+      <h2>Premier fragment</h2>
+      <p>Un texte qui explore les silences et la mémoire. Une écriture lente, attentive aux paysages intérieurs et aux voix enfouies.</p>
+      <p><a href="#" class="read-link">Lire l’article complet</a></p>
     </div>
     <img src="https://via.placeholder.com/400x550" alt="Couverture du livre">
   </div>
 
-  <!-- COLLECTION -->
+  <!-- AUTRES ARTICLES -->
+
   <div class="section-title">Lectures récentes</div>
 
-  <div class="books">
-    <div class="book">
-      <img src="https://via.placeholder.com/250x350" alt="">
-      <div class="book-title">Happy Places</div>
-      <div class="book-author">Emily Henry</div>
+  <div class="grid">
+
+    <div class="article">
+      <div class="meta">Essai</div>
+      <h3>Fragments de pensée</h3>
+      <p>Un livre dense et lumineux, qui interroge la transmission et la mémoire collective.</p>
+      <a href="#">Lire</a>
     </div>
 
-    <div class="book">
-      <img src="https://via.placeholder.com/250x350" alt="">
-      <div class="book-title">Be Yourself</div>
-      <div class="book-author">Auteur inconnu</div>
+    <div class="article">
+      <div class="meta">Roman</div>
+      <h3>Les territoires intimes</h3>
+      <p>Une narration subtile qui s’installe progressivement et révèle ses tensions sous la surface.</p>
+      <a href="#">Lire</a>
     </div>
 
-    <div class="book">
-      <img src="https://via.placeholder.com/250x350" alt="">
-      <div class="book-title">Life is Beautiful</div>
-      <div class="book-author">Auteur inconnu</div>
-    </div>
   </div>
 
 </div>
