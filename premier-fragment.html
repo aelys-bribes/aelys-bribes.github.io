@@ -9,69 +9,25 @@
 
 <style>
 
-:root {
-  --accent: #d04a02;
-  --bg: #f8f5f0;
-  --text: #1a1a1a;
-  --muted: #8c8c8c;
-}
-
 body {
-  background: var(--bg);
-  color: var(--text);
+  background: #f8f5f0;
+  color: #1a1a1a;
   font-family: 'Libre Baskerville', serif;
   margin: 0;
   line-height: 1.9;
   font-size: 18px;
 }
 
-/* Navigation */
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 30px 0;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--text);
-  position: relative;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Container */
-
 .container {
   max-width: 900px;
-  margin: 80px auto 120px auto;
+  margin: 100px auto;
   padding: 20px;
 }
 
-/* Meta + titre */
-
 .meta {
-  color: var(--muted);
-  margin-bottom: 15px;
+  color: #8c8c8c;
   font-size: 14px;
+  margin-bottom: 15px;
 }
 
 h1 {
@@ -83,65 +39,51 @@ h1 {
 .author {
   font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
-
-/* Layout article */
 
 .article-layout {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 60px;
+  grid-template-columns: 180px 1fr;
+  gap: 50px;
   align-items: start;
 }
 
 .book-cover {
   width: 100%;
-  border: 2px solid var(--accent);
+  border: 2px solid #d04a02;
   padding: 6px;
   background: white;
 }
 
-.article-text {
-  max-width: 620px;
-}
-
-/* Citation d’ouverture */
-
 .opening {
-  font-size: 22px;
+  font-size: 20px;
   font-style: italic;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   position: relative;
-  line-height: 1.6;
 }
 
 .opening::before {
   content: "“";
-  font-size: 70px;
-  color: var(--accent);
+  font-size: 60px;
+  color: #d04a02;
   position: absolute;
-  left: -30px;
-  top: -20px;
+  left: -25px;
+  top: -15px;
 }
 
-/* Corps */
-
 p {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .closing {
   font-weight: bold;
-  margin-top: 30px;
 }
 
-/* Référence */
-
 .reference {
-  margin-top: 100px;
+  margin-top: 80px;
   font-size: 14px;
-  color: var(--muted);
+  color: #8c8c8c;
   border-top: 1px solid #ddd;
   padding-top: 20px;
 }
@@ -150,13 +92,6 @@ p {
 </head>
 
 <body>
-
-<nav>
-  <a href="index.html">Accueil</a>
-  <a href="apropos.html">À propos</a>
-  <a href="#">Bibliothèque</a>
-  <a href="#">Contact</a>
-</nav>
 
 <div class="container">
 
@@ -170,7 +105,7 @@ p {
 
     <img src="aupy-chats.jpg" alt="L’homme qui n’aimait plus les chats" class="book-cover">
 
-    <div class="article-text">
+    <div>
 
       <blockquote class="opening">
       Les esprits s'embrouillent facilement. C'est ce qui arrive quand on appelle un chien un chat. On embrouille tout, on change les idées des gens, on les empêche de savoir ce qu'ils aiment ou ce qu'ils pensent.
