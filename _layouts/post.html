@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }} – {{ site.title }}</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --accent: #d04a02;
+  --bg: #f6f3ee;
+  --text: #111;
+  --muted: #8a8a8a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 140px auto;
+  padding: 20px;
+}
+
+/* Meta */
+
+.meta {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* Titre ultra assumé */
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0 0 20px 0;
+}
+
+.author {
+  font-size: 16px;
+  color: var(--accent);
+  margin-bottom: 80px;
+}
+
+/* Layout */
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.book-cover {
+  width: 100%;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Citation plus éditoriale */
+
+blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0 0 60px 0;
+  padding-left: 30px;
+  border-left: 4px solid var(--accent);
+}
+
+/* Corps */
+
+p {
+  margin-bottom: 28px;
+  text-align: justify;
+}
+
+/* Dernière phrase */
+
+strong {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Référence */
+
+.reference {
+  margin-top: 120px;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="meta">
+{{ page.date | date: "%B %Y" }} — {{ page.genre }}
+</div>
+
+<h1>{{ page.title }}</h1>
+
+<div class="author">{{ page.author }}</div>
+
+<div class="article-layout">
+
+{% if page.image %}
+<img src="{{ page.image }}" class="book-cover">
+{% endif %}
+
+<div>
+{{ content }}
+</div>
+
+</div>
+
+<div class="reference">
+{{ page.author }}, <em>{{ page.title }}</em>.
+</div>
+
+</div>
+
+</body>
+</html>
