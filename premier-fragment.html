@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premier fragment – Bribes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --accent: #d04a02;
+  --bg: #f8f5f0;
+  --text: #1a1a1a;
+  --muted: #8c8c8c;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Libre Baskerville', serif;
+  margin: 0;
+  line-height: 1.9;
+  font-size: 18px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.container {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+.meta {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  margin-bottom: 40px;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 22px;
+  margin: 60px 0;
+  position: relative;
+}
+
+blockquote::before {
+  content: "“";
+  font-size: 60px;
+  color: var(--accent);
+  position: absolute;
+  left: -25px;
+  top: -20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="apropos.html">À propos</a>
+  <a href="#">Bibliothèque</a>
+  <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+  <div class="meta">28 février 2026 — Roman</div>
+  <h1>Premier fragment</h1>
+
+  <p>Développe ici ton analyse complète. Le contexte, l’écriture, les thèmes, ce qui t’a marquée.</p>
+
+  <blockquote>
+    Les livres sont des miroirs : on n’y voit que ce qu’on porte en soi.
+  </blockquote>
+
+  <p>Continue ton texte ici.</p>
+
+</div>
+
+</body>
+</html>
