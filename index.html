@@ -25,9 +25,44 @@ body {
   font-size: 18px;
 }
 
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* CONTAINER */
+
 .container {
   max-width: 1000px;
-  margin: 100px auto;
+  margin: 60px auto 100px auto;
   padding: 20px;
 }
 
@@ -147,6 +182,13 @@ body {
 </head>
 
 <body>
+
+<nav>
+  <a href="#">Accueil</a>
+  <a href="#">À propos</a>
+  <a href="#">Bibliothèque</a>
+  <a href="#">Contact</a>
+</nav>
 
 <div class="container">
 
