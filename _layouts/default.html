@@ -1,13 +1,19 @@
-<style>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }} — {{ site.title }}</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
 :root {
-  --accent: #ff5a1f; /* plus orange, plus vivant */
+  --accent: #ff5a1f;
   --bg: #f6f2ec;
   --text: #1a1a1a;
   --muted: #8c8c8c;
 }
-
-/* BASE */
 
 body {
   background: var(--bg);
@@ -18,8 +24,6 @@ body {
   font-size: 18px;
   color: var(--text);
 }
-
-/* HEADER */
 
 .site-title {
   font-family: 'Playfair Display', serif;
@@ -35,96 +39,47 @@ body {
   margin-bottom: 70px;
 }
 
-/* TITRES */
-
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 40px;
-  font-weight: 700;
   margin-bottom: 15px;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
   font-size: 26px;
-  font-weight: 600;
   margin-top: 50px;
-  margin-bottom: 10px;
 }
-
-/* META */
-
-.meta {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 35px;
-}
-
-/* PARAGRAPHES */
 
 p {
   margin-bottom: 24px;
   text-align: justify;
 }
 
-/* CITATION AVEC GUILLEMET */
-
-.article-content blockquote {
-  position: relative;
-  font-style: italic;
-  font-size: 1.15em;
-  margin: 50px 0;
-  padding-left: 40px;
-}
-
-.article-content blockquote::before {
-  content: "“";
-  position: absolute;
-  left: 0;
-  top: -10px;
-  font-family: 'Playfair Display', serif;
-  font-size: 60px;
-  color: var(--accent);
-  line-height: 1;
-}
-
-/* LIENS */
-
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: 0.2s ease;
 }
 
 a:hover {
   opacity: 0.7;
 }
 
-/* IMAGE */
-
 img {
   max-width: 100%;
-  height: auto;
   margin: 50px 0;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08); /* ombre douce */
-  border-radius: 4px;
-  transition: 0.3s ease;
-}
-
-img:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-}
-
-/* SEPARATEUR */
-
-.separator {
-  width: 50px;
-  height: 2px;
-  background: var(--accent);
-  margin: 25px 0 40px 0;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
 </style>
+</head>
+
+<body>
+
+<div class="site-title">{{ site.title }}</div>
+<div class="site-subtitle">{{ site.description }}</div>
+
+{{ content }}
+
+</body>
+</html>
