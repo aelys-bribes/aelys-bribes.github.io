@@ -4,7 +4,7 @@ title: "L’homme qui n’aimait plus les chats"
 author: "Isabelle Aupy"
 date: 2026-03-10
 genre: "Fable philosophique"
-image: "images/aupy-chats.jpg"
+image: "images/aupy-chats.jpeg"
 ---
 
 > Les esprits s'embrouillent facilement. C'est ce qui arrive quand on appelle un chien un chat. On embrouille tout, on change les idées des gens, on les empêche de savoir ce qu'ils aiment ou ce qu'ils pensent.
