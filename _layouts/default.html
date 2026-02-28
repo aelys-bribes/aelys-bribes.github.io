@@ -9,54 +9,84 @@
 
 <style>
 :root {
-  --accent: #ff5a1f;
+  --accent: #e65100;
   --bg: #f6f2ec;
   --text: #1a1a1a;
   --muted: #8c8c8c;
 }
 
 body {
-  background: #ffe9dc;
+  background: var(--bg);
   font-family: 'EB Garamond', serif;
-  max-width: 820px;
-  margin: 100px auto;
-  line-height: 1.85;
-  font-size: 18px;
+  max-width: 760px;
+  margin: 90px auto;
+  line-height: 1.7;
+  font-size: 17px;
   color: var(--text);
 }
 
+/* TITRE SITE */
+
 .site-title {
   font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  margin-bottom: 5px;
+  font-size: 30px;
+  margin-bottom: 4px;
 }
 
 .site-subtitle {
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
+
+/* META */
+
+.meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* TITRE ARTICLE */
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 34px;
+  font-size: 32px;
   line-height: 1.15;
   margin-bottom: 20px;
   letter-spacing: -0.5px;
+  text-align: left;
 }
 
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  margin-top: 50px;
+/* AUTEUR */
+
+.author {
+  color: var(--accent);
+  margin-bottom: 45px;
+  font-size: 16px;
 }
+
+/* TEXTE */
 
 p {
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   text-align: justify;
 }
+
+/* IMAGE */
+
+img {
+  max-width: 320px;
+  margin: 40px 0;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  display: block;
+}
+
+/* LIENS */
 
 a {
   color: var(--accent);
@@ -66,15 +96,7 @@ a {
 a:hover {
   opacity: 0.7;
 }
-
-img {
-  max-width: 100%;
-  margin: 50px 0;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-}
-
-</style>
-</head>
+</style>>
 
 <body>
 
