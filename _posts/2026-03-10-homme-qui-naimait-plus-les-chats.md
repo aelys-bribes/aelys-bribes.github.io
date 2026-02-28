@@ -2,7 +2,7 @@
 layout: post
 title: "L’homme qui n’aimait plus les chats"
 author: "Isabelle Aupy"
-date: 2026-03-10
+date: 2024-03-10
 genre: "Fable philosophique"
 image: "Couv_aupy.jpeg"
 ---
